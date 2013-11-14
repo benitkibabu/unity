@@ -7,58 +7,59 @@ var isAnimating : boolean;
 var DoorFloorID : int;
 
 private var travelDistance : float = 1.0;
+
 function Start(){
-OriginalPos = transform.position;
+  OriginalPos = transform.position;
 }
 
 function Open(){
-isAnimating = true;
-if(Opposite){
-travelDistance = OriginalPos.x - OpenDistance;
-while(travelDistance < transform.position.x){
-transform.position.x -= openSpeed * Time.deltaTime;
-yield;
-}
-if(transform.position.x <= travelDistance){
-transform.position.x = travelDistance;
-}
-}
-else{
-travelDistance = OriginalPos.x + OpenDistance;
-while(travelDistance > transform.position.x){
-transform.position.x += openSpeed * Time.deltaTime;
-yield;
-}
-if(transform.position.x >= travelDistance){
-transform.position.x = travelDistance;
-}
-}
-isAnimating = false;
-open = true;
+  isAnimating = true;
+  if(Opposite){
+    travelDistance = OriginalPos.x - OpenDistance;
+    while(travelDistance < transform.position.x){
+      transform.position.x -= openSpeed * Time.deltaTime;
+      yield;
+    }
+    if(transform.position.x <= travelDistance){
+      transform.position.x = travelDistance;
+    }
+  }
+  else{
+    travelDistance = OriginalPos.x + OpenDistance;
+    while(travelDistance > transform.position.x){
+      transform.position.x += openSpeed * Time.deltaTime;
+      yield;
+    }
+    if(transform.position.x >= travelDistance){
+        transform.position.x = travelDistance;
+    }
+  }
+    isAnimating = false;
+  open = true;
 }
 
 function Close(){
-isAnimating = true;
-if(Opposite){
-travelDistance = OriginalPos.x;
-while(travelDistance > transform.position.x){
-transform.position.x += openSpeed * Time.deltaTime;
-yield;
-}
-if(transform.position.x >= travelDistance){
-transform.position.x = travelDistance;
-}
-}
-else{
-travelDistance = OriginalPos.x;
-while(travelDistance < transform.position.x){
-transform.position.x -= openSpeed * Time.deltaTime;
-yield;
-}
-if(transform.position.x <= travelDistance){
-transform.position.x = travelDistance;
-}
-}
-isAnimating = false;
-open = false;
+  isAnimating = true;
+  if(Opposite){
+    travelDistance = OriginalPos.x;
+    while(travelDistance > transform.position.x){
+      transform.position.x += openSpeed * Time.deltaTime;
+      yield;
+    }
+    if(transform.position.x >= travelDistance){
+    transform.position.x = travelDistance;
+    }
+  }
+  else{
+    travelDistance = OriginalPos.x;
+    while(travelDistance < transform.position.x){
+      transform.position.x -= openSpeed * Time.deltaTime;
+      yield;
+    }
+    if(transform.position.x <= travelDistance){
+    transform.position.x = travelDistance;
+    }
+  }
+  isAnimating = false;
+  open = false;
 }
