@@ -1,9 +1,12 @@
+//Author: Benit Kibabu
+//This file refers to the controller inside the Elevator
+
 private var floorHeights : float[] = new float[6];
 var isMoving : boolean;
 var moveSpeed : float = 1.0;
 var currentFloor : int = 1;
 private var moveThis : boolean;
-var door : RDLLiftDoor[] = new RDLLiftDoor[14];
+var door : ElevatorDoor[] = new ElevatorDoor[14];
 private var floorID: int; private var goingUp: boolean;
 var start : AudioClip;
 var end : AudioClip;
