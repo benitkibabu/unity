@@ -1,3 +1,6 @@
+//this code refers to the elevator door 
+//needs some improvement but for the meantime it works just fine.
+
 var open : boolean;
 var OpenDistance : float = 1.0;
 private var OriginalPos : Vector3;
