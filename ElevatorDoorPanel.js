@@ -1,7 +1,7 @@
 var FloorID : int;
 
-var door : RDLLiftDoor[] = new RDLLiftDoor[4];
-var myElevator : RDLLiftController;
+var door : ElevatorDoor[] = new ElevatorDoor[4];
+var myElevator : ElevatorController;
 private var isColiding : boolean = false;
 private var rec : Rect;
 
